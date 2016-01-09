@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcg.dao.VisitInfoDAO">
+            
+	<insert id="insertVisitInfo" parameterType="VisitInfoVo" useGeneratedKeys="true" keyProperty="id">
+         insert into t_visit_info(ip,module,desc,url,browser)
+         values
+         (
+         #{ip},
+         #{module},
+         #{desc},
+         #{url},
+         #{browser}
+	</insert>
+
+    <select id="selectVisitInfoById" parameterType="Long" resultType="VisitInfoVo">
+        select * from t_visit_info where t_visit_info.id = #{id}
+    </select>
+    
+    <select id="selectAllVisitInfo" parameterType="SearchObject" resultType="VisitInfoVo">
+        select * from t_visit_info
+        <where>
+        	<if test="ip != null and ip != ''">
+        		and t_visit_info.ip like CONCAT(CONCAT('%',#{ip}),'%')
+        	</if>
+        	<if test="module != null and module != ''">
+        		and t_visit_info.module like CONCAT(CONCAT('%',#{module}),'%')
+        	</if>
+        </where>
+        limit #{startNum},#{showNum};
+    </select>
+
+    <select id="selectAllVisitInfoCount" parameterType="SearchObject" resultType="Integer">
+        select count(0) from t_visit_info
+        <where>
+            <if test="ip != null and ip != ''">
+                and t_visit_info.ip like CONCAT(CONCAT('%',#{ip}),'%')
+            </if>
+            <if test="module != null and module != ''">
+                and t_visit_info.module like CONCAT(CONCAT('%',#{module}),'%')
+            </if>
+        </where>
+    </select>
+    
+</mapper>

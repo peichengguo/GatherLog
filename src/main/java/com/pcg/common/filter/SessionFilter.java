@@ -1,6 +1,7 @@
 package com.pcg.common.filter;
 
 
+import com.pcg.common.utils.CommonUtils;
 import com.pcg.common.vo.User;
 
 import javax.servlet.*;
@@ -33,6 +34,7 @@ public class SessionFilter implements Filter{
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filter)
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
+        CommonUtils.getClientIP(request);
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 		

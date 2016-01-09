@@ -72,7 +72,7 @@
        
    <!-- spring与mybatis整合配置，扫描所有dao -->
  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-        p:basePackage="com.hbys.dao"
+        p:basePackage="com.pcg.dao"
         p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
   
    <!-- 对数据源进行事务管理 -->
@@ -96,7 +96,7 @@
   </tx:advice>  
 
   <aop:config proxy-target-class="true">  
-      <aop:advisor pointcut="execution( * com.hbys.service.*.*(..))" advice-ref="hbysTxAdvice" />  
+      <aop:advisor pointcut="execution( * com.pcg.service.*.*(..))" advice-ref="hbysTxAdvice" />
         
   </aop:config>  
         

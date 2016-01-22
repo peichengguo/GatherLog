@@ -1,5 +1,6 @@
 package com.pcg.controller;
 
+import com.pcg.common.annotation.ActionControllerLog;
 import com.pcg.common.utils.CommonUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController {
 
     @RequestMapping("index")
+    @ActionControllerLog(title = "访问主页")
     public String toIndex(HttpServletRequest request,Model model){
         String ip = CommonUtils.getClientIP(request);
         model.addAttribute("ip",ip);

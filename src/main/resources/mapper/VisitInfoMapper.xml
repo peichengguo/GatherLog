@@ -5,14 +5,16 @@
 <mapper namespace="com.pcg.dao.VisitInfoDAO">
             
 	<insert id="insertVisitInfo" parameterType="VisitInfoVo" useGeneratedKeys="true" keyProperty="id">
-         insert into t_visit_info(ip,module,desc,url,browser)
+         insert into t_visit_info(ip,userId,module,desc_info,url,error_info,browser)
          values
          (
          #{ip},
+         #{userId},
          #{module},
          #{desc},
          #{url},
-         #{browser}
+         #{errorInfo},
+         #{browser})
 	</insert>
 
     <select id="selectVisitInfoById" parameterType="Long" resultType="VisitInfoVo">

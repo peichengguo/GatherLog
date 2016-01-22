@@ -39,15 +39,7 @@ public class CommonUtils {
             fromSource = "request.getRemoteAddr";
         }
 
-        String browser = request.getHeader("User-Agent");
-        String url = request.getRequestURL().toString();
-
-//        VisitInfoVo vo = new VisitInfoVo();
-//        vo.setIp(fromSource+":"+ip);
-//        vo.setBrowser(browser);
-//        vo.setUrl(url);
-//        visitInfoService.insertVisitInfo(vo);
-        log.info("App Client IP: "+ip+", fromSource: "+fromSource + ",other: "+browser + url);
+        log.info("App Client IP: "+ip+", fromSource: "+fromSource);
         return ip;
     }
 }

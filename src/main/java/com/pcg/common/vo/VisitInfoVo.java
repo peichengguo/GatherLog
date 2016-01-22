@@ -9,6 +9,8 @@ public class VisitInfoVo {
 
     private Long id;
 
+    private Long userId;
+
     private String ip;
 
     private Date time;
@@ -19,6 +21,8 @@ public class VisitInfoVo {
 
     private String url;
 
+    private String errorInfo;
+
     private String browser;
 
     public Long getId() {
@@ -27,6 +31,14 @@ public class VisitInfoVo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getIp() {
@@ -75,5 +87,13 @@ public class VisitInfoVo {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(String errorInfo) {
+        this.errorInfo = errorInfo;
     }
 }

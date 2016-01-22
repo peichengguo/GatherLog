@@ -156,10 +156,24 @@
       </dependency>
 
       <dependency>
-          <groupId>aspectj</groupId>
+          <groupId>org.aspectj</groupId>
           <artifactId>aspectjweaver</artifactId>
-          <version>1.5.3</version>
+          <version>1.6.11</version>
       </dependency>
+
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>1.6.11</version>
+      </dependency>
+
+
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.2.6</version>
+      </dependency>
+
   </dependencies>
 
 

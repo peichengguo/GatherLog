@@ -1,12 +1,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>欢迎访问！</title>
+    <title>新春快乐</title>
 </head>
 <body>
-<h2>欢迎访问！</h2>
+<h2>新春快乐！</h2>
 
-您的ip为：${ip}
+
 
 </body>
 </html>
